@@ -1,4 +1,4 @@
-class bank
+class Bank
 {
   static totalbankBalance:number=0;
 
@@ -11,7 +11,7 @@ class bank
     this.id=id;
     this.name=name;
     this.amount=amount;
-    bank.totalbankBalance+=amount;
+    Bank.totalbankBalance+=amount;
   };
    debit(am:number):void{
     if (am > this.amount) {
@@ -19,14 +19,14 @@ class bank
     return;
 }
     this.amount-=am;
-    bank.totalbankBalance-=am;
+    Bank.totalbankBalance-=am;
     
     console.log(`your account debit: ${am} amount`)
   }
 
    credit(am:number):void{
     this.amount+=am;
-    bank.totalbankBalance+=am;
+    Bank.totalbankBalance+=am;
      console.log(`your account credit: ${am} amount`)
   }
 
@@ -40,14 +40,14 @@ Balance : ₹${this.amount}
 
 }
 
-const u1=new bank(21,"krishna",21210);
-const u2=new bank(212,"chotu",1000);
-const u3=new bank(27,"jal",50010);
+const u1=new Bank(21,"krishna",21210);
+const u2=new Bank(212,"chotu",1000);
+const u3=new Bank(27,"jal",50010);
 u1.accountInfo()
 
-console.log(`totla amount in bank is ${bank.totalbankBalance}`);
+console.log(`totla amount in bank is ${Bank.totalbankBalance}`);
 
 u1.credit(3000)
-console.log(`totla amount in bank is ${bank.totalbankBalance}`);
+console.log(`totla amount in bank is ${Bank.totalbankBalance}`);
 
 
